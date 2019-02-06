@@ -1,0 +1,37 @@
+======================================
+README for MeggyRef/RegressionTesting/
+======================================
+MJSIM.jar (revision 157 from http://code.google.com/p/mjsim/source/list), 
+1/20/13, MMS
+Anytime a new version of the MeggySim simulator (MJSIM.jar) is generated,
+this file should be updated with the revision number for that program.
+
+
+All of the .java files in the WorkingTestCases/ and 
+WorkingErrorTestCases/ subdirectories will be run with the 
+Java-only version and be run through the ../MJ.jar
+compiler to generate AVR assembly that is then run through the
+MJSIM.jar in batch mode.  The text output from both should match.
+
+
+To run the regression tests:
+    Put files in WorkingTestCases/ or WorkingErrorTestCases/
+    subdirectories.
+    
+    ./regress.sh
+    
+    ./regress.sh SomeSubDir/filename.java 
+        If want to run regression on a single input file.
+        Yes it HAS to be in a subdirectory because of how the
+        script works.
+
+
+To clean up all those .s, .dot, and .java files in this
+directory after running regress.sh:
+    rm -rf *.s *.dot *.java *.class meggy/*.class output.log t1 t2
+    
+We could have the regress.sh clean up these files, but sometimes
+for debugging it helps to have them around to look at.
+
+
+
