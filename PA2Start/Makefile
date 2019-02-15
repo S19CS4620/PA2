@@ -50,7 +50,7 @@ clean:
 
 ### Final jar files
 $(PROG).jar: $(SRC_DIR)/$(PROG)Driver.class
-	cd $(SRC_DIR); $(JAR) cmf $(PROG)MainClass.txt $(PROG).jar *.class */*.class */*/*.class -C $(JAVA_CUP_RUNTIME) java_cup  
+	cd $(SRC_DIR); $(JAR) cmf $(PROG)MainClass.txt $(PROG).jar *.class */*.class */*/*.class avrH.rtl.s avrF.rtl.s -C $(JAVA_CUP_RUNTIME) java_cup  
 	cd ..
 	mv $(SRC_DIR)/$(PROG).jar .
 
